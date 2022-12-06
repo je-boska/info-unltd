@@ -1,10 +1,11 @@
 import { InferGetStaticPropsType } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
-import { getAlbums } from '../queries/albumQuery';
+import Link from 'next/link';
+import { getReleases } from '../queries/Releases';
 
 export default function Home({
-  albums,
+  releases,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <div>
@@ -17,21 +18,23 @@ export default function Home({
       <main>
         <h1 className='m-4 font-bold'>INFO</h1>
         <div className='grid md:grid-cols-2 m-4'>
-          {albums.map(({ title, artist, slug, artwork }) => (
-            <div key={slug}>
-              <Image
-                className='w-full h-auto'
-                src={artwork.url}
-                alt={artwork.title}
-                width={artwork.width}
-                height={artwork.height}
-              />
-              <h2>
-                <span>{artist}</span>
-                <br />
-                <span>{title}</span>
-              </h2>
-            </div>
+          {releases.map(({ title, artist, slug, artwork }) => (
+            <Link href={`/releases/${slug}`} key={slug}>
+              <div>
+                <Image
+                  className='w-full h-auto'
+                  src={artwork.url}
+                  alt={artwork.title}
+                  width={artwork.width}
+                  height={artwork.height}
+                />
+                <h2>
+                  <span>{artist}</span>
+                  <br />
+                  <span>{title}</span>
+                </h2>
+              </div>
+            </Link>
           ))}
         </div>
       </main>
@@ -42,7 +45,7 @@ export default function Home({
 export async function getStaticProps() {
   return {
     props: {
-      albums: await getAlbums(),
+      releases: await getReleases(),
     },
     revalidate: 60 * 60,
   };

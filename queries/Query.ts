@@ -4,7 +4,7 @@ function getErrorMessage(payload: ErrorPayload) {
   return payload.errors[0].message;
 }
 
-export async function contentfulQuery(query: any) {
+export async function contentfulQuery(query: any, variables?: any) {
   const res = await fetch(
     `https://graphql.contentful.com/content/v1/spaces/${process.env.PUBLIC_CONTENTFUL_SPACE_ID}`,
     {
@@ -15,6 +15,7 @@ export async function contentfulQuery(query: any) {
       },
       body: JSON.stringify({
         query,
+        variables,
       }),
     }
   );

@@ -37,7 +37,7 @@ export interface RichText {
   links?: Links;
 }
 
-export interface Album {
+export interface Release {
   title: string;
   artist: string;
   slug: string;
