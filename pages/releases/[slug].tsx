@@ -9,8 +9,10 @@ export default function Release({
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   const { title, artist, artwork } = release;
 
+  const metaTitle = artist.toUpperCase() + ' - ' + title;
+
   return (
-    <Layout title={artist.toUpperCase() + ' - ' + title}>
+    <Layout title={metaTitle}>
       <div className='m-4'>
         <Image
           className='w-full h-auto'
