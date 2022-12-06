@@ -2,6 +2,7 @@ import { InferGetStaticPropsType } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
+import Header from '../components/Header';
 import { getReleases } from '../queries/Releases';
 
 export default function Home({
@@ -15,8 +16,9 @@ export default function Home({
         <link rel='icon' href='/favicon.ico' />
       </Head>
 
+      <Header />
+
       <main>
-        <h1 className='m-4 font-bold'>INFO</h1>
         <div className='grid md:grid-cols-2 m-4'>
           {releases.map(({ title, artist, slug, artwork }) => (
             <Link href={`/releases/${slug}`} key={slug}>

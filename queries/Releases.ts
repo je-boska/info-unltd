@@ -30,7 +30,7 @@ export async function getReleases() {
 export async function getReleasePage(slug: string) {
   const query = /* GRAPHQL */ `
     query SingleReleaseQuery($slug: String) {
-      releaseCollection (where: { slug: $slug }, limit: 100) {
+      releaseCollection (where: { slug: $slug }, limit: 1) {
         items {
           title
           artist

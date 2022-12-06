@@ -1,5 +1,6 @@
 import { InferGetStaticPropsType } from 'next';
 import Image from 'next/image';
+import Header from '../../components/Header';
 import { getReleasePage, getReleasePaths } from '../../queries/Releases';
 
 export default function Release({
@@ -7,8 +8,9 @@ export default function Release({
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   const { title, artist, artwork } = release;
   return (
-    <div>
-      <div>
+    <>
+      <Header />
+      <div className='m-4'>
         <Image
           className='w-full h-auto'
           src={artwork.url}
@@ -22,7 +24,7 @@ export default function Release({
           <span>{title}</span>
         </h2>
       </div>
-    </div>
+    </>
   );
 }
 
