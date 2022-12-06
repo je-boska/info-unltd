@@ -6,4 +6,10 @@
   html {
     background-color: #e0e0e0;
   }
+
+  /* MARKUP */
+
+  .markup p {
+    @apply mb-6;
+  }
 }

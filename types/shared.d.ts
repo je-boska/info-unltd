@@ -1,3 +1,5 @@
+import { Document } from '@contentful/rich-text-types';
+
 export type ErrorPayloadMessage = {
   message: string;
   extensions: {
@@ -44,4 +46,9 @@ export interface Release {
   description: RichText;
   artwork: Asset;
   bandcampLink: string;
+}
+
+export interface Page {
+  title: string;
+  body: RichText;
 }
