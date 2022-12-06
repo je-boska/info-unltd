@@ -6,7 +6,7 @@ export default function Header() {
     <header className='flex justify-between items-center'>
       <Link href='/'>
         <Image
-          className='m-2 w-32'
+          className='m-2 w-28 md:w-32'
           src='/info-cursive-logo.png'
           alt=''
           width={172}
@@ -14,7 +14,7 @@ export default function Header() {
         />
       </Link>
       <nav>
-        <ul className='fixed top-4 right-4 flex text-xl border border-black bg-infoGray'>
+        <ul className='fixed top-4 right-4 flex text-base md:text-xl border border-black bg-infoGray'>
           <NavLink title='RELEASES' link='/' />
           <NavLink title='EVENTS' link='/events' />
           <NavLink title='INFO' link='/info' />

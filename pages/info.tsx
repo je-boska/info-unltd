@@ -1,5 +1,6 @@
 import { InferGetStaticPropsType } from 'next';
 import Header from '../components/Header';
+import Layout from '../components/Layout';
 import { getInfoPage } from '../queries/Info';
 import { renderRichTextWithImages } from '../utils/rich-text';
 
@@ -8,12 +9,11 @@ export default function Info({
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   const { body } = page;
   return (
-    <div>
-      <Header />
-      <div className='markup max-w-5xl m-4 text-2xl'>
+    <Layout title='INFO'>
+      <div className='markup max-w-4xl m-4'>
         {renderRichTextWithImages(body)}
       </div>
-    </div>
+    </Layout>
   );
 }
 

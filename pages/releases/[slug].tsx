@@ -1,15 +1,16 @@
 import { InferGetStaticPropsType } from 'next';
 import Image from 'next/image';
 import Header from '../../components/Header';
+import Layout from '../../components/Layout';
 import { getReleasePage, getReleasePaths } from '../../queries/Releases';
 
 export default function Release({
   release,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   const { title, artist, artwork } = release;
+
   return (
-    <>
-      <Header />
+    <Layout title={artist.toUpperCase() + ' - ' + title}>
       <div className='m-4'>
         <Image
           className='w-full h-auto'
@@ -24,7 +25,7 @@ export default function Release({
           <span>{title}</span>
         </h2>
       </div>
-    </>
+    </Layout>
   );
 }
 

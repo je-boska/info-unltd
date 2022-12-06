@@ -9,6 +9,10 @@
 
   /* MARKUP */
 
+  .markup {
+    @apply text-xl md:text-2xl;
+  }
+
   .markup p {
     @apply mb-6;
   }
