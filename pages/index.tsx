@@ -15,23 +15,25 @@ export default function Home({
       </Head>
 
       <main>
-        <h1>INFO</h1>
-        {albums.map(({ title, artist, slug, artwork }) => (
-          <div key={slug}>
-            <Image
-              className='w-32 h-32'
-              src={artwork.url}
-              alt={artwork.title}
-              width={artwork.width}
-              height={artwork.height}
-            />
-            <h2>
-              <span>{artist}</span>
-              <br />
-              <span>{title}</span>
-            </h2>
-          </div>
-        ))}
+        <h1 className='m-4 font-bold'>INFO</h1>
+        <div className='grid md:grid-cols-2 m-4'>
+          {albums.map(({ title, artist, slug, artwork }) => (
+            <div key={slug}>
+              <Image
+                className='w-full h-auto'
+                src={artwork.url}
+                alt={artwork.title}
+                width={artwork.width}
+                height={artwork.height}
+              />
+              <h2>
+                <span>{artist}</span>
+                <br />
+                <span>{title}</span>
+              </h2>
+            </div>
+          ))}
+        </div>
       </main>
     </div>
   );
