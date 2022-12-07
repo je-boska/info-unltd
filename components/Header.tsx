@@ -13,7 +13,7 @@ export default function Header() {
           height={91}
         />
       </Link>
-      <nav>
+      <nav className='z-10'>
         <ul className='fixed top-4 right-4 flex text-base md:text-xl border border-black bg-infoGray'>
           <NavLink title='RELEASES' link='/' />
           <NavLink title='EVENTS' link='/events' />
