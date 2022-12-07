@@ -25,7 +25,7 @@ export default function Release({
             ></div>
           ) : null}
         </div>
-        <div className='md:order-1 max-w-3xl text-xl md:text-2xl'>
+        <div className='md:order-1 max-w-3xl text-lg md:text-xl lg:text-2xl'>
           <h2 className='mb-6'>
             <span>{artist}</span>
             <br />

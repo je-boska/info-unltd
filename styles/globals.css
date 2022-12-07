@@ -10,7 +10,7 @@
   /* MARKUP */
 
   .markup {
-    @apply text-xl md:text-2xl;
+    @apply text-lg md:text-xl lg:text-2xl;
   }
 
   .markup p {
