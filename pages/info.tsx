@@ -1,5 +1,4 @@
 import { InferGetStaticPropsType } from 'next';
-import Header from '../components/Header';
 import Layout from '../components/Layout';
 import { getInfoPage } from '../queries/Info';
 import { renderRichTextWithImages } from '../utils/rich-text';

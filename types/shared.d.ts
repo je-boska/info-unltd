@@ -52,3 +52,14 @@ export interface Page {
   title: string;
   body: RichText;
 }
+
+export interface Event {
+  title: string;
+  slug: string;
+  date: Date;
+  location: string;
+  description: RichText;
+  mediaCollection: {
+    items: Asset[];
+  };
+}
