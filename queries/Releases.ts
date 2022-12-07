@@ -53,7 +53,8 @@ export async function getReleasePage(slug: string) {
         }
       }
     }`;
-  const { data } = await contentfulQuery(query, { variables: slug });
+  const { data } = await contentfulQuery(query, { slug });
+
   return data.releaseCollection.items[0] as Release;
 }
 

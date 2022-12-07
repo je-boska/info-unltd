@@ -10,12 +10,14 @@ export default function Events({
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <Layout title='EVENTS'>
-      {events.map(({ title, slug, mediaCollection }) => (
-        <div key={slug} className='max-w-4xl mx-auto mb-20'>
-          <Carousel media={mediaCollection.items} />
-          <h3 className='text-xl md:text-2xl'>{title}</h3>
-        </div>
-      ))}
+      <div className='m-4'>
+        {events.map(({ title, slug, mediaCollection }) => (
+          <div key={slug} className='max-w-4xl mx-auto mb-20'>
+            <Carousel media={mediaCollection.items} />
+            <h3 className='text-xl md:text-2xl'>{title}</h3>
+          </div>
+        ))}
+      </div>
     </Layout>
   );
 }

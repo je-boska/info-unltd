@@ -4,7 +4,16 @@ function getErrorMessage(payload: ErrorPayload) {
   return payload.errors[0].message;
 }
 
-export async function contentfulQuery(query: any, variables?: any) {
+export async function contentfulQuery(
+  query: any,
+  variables?: Record<string, string | boolean | number>
+) {
+  if (process.env.NODE_ENV !== 'production') {
+    const queryName = query.trimStart().substring(6, query.indexOf('Query'));
+
+    console.log('[graphql]', queryName, variables);
+  }
+
   const res = await fetch(
     `https://graphql.contentful.com/content/v1/spaces/${process.env.PUBLIC_CONTENTFUL_SPACE_ID}`,
     {
