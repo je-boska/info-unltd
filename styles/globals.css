@@ -16,4 +16,20 @@
   .markup p {
     @apply mb-6;
   }
+
+  .markup a {
+    @apply text-blue-600;
+  }
+
+  .markup h3 {
+    @apply my-6 text-2xl md:text-3xl;
+  }
+
+  .markup ul {
+    @apply mb-6;
+  }
+
+  .markup ul li p {
+    @apply mb-0 pb-0;
+  }
 }
