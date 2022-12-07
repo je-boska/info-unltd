@@ -8,11 +8,6 @@ export async function getEvents() {
         items {
           title
           slug
-          date
-          location
-          description {
-            json
-          }
           mediaCollection {
             items {
                url

@@ -9,10 +9,11 @@ export default function Layout({
   title?: string;
   children: ReactNode;
 }) {
+  const metaTitle = `INFO | ${title ? title : 'INFO'}`;
   return (
     <>
       <Head>
-        <title>INFO | {title ? title : 'INFO'}</title>
+        <title>{metaTitle}</title>
         <meta
           name='description'
           content='INFO is dedicated to sound in the expanded field. Researching, cataloging, and curating exceptional sonics and practices in contemporary art and music.'

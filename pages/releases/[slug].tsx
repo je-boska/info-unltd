@@ -1,26 +1,20 @@
-import { InferGetStaticPropsType } from 'next';
-import Image from 'next/image';
-import Header from '../../components/Header';
+import Carousel from '../../components/Carousel';
 import Layout from '../../components/Layout';
+
+import { InferGetStaticPropsType } from 'next';
 import { getReleasePage, getReleasePaths } from '../../queries/Releases';
 
 export default function Release({
   release,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
-  const { title, artist, artwork } = release;
+  const { title, artist, artworkCollection } = release;
 
   const metaTitle = artist.toUpperCase() + ' - ' + title;
 
   return (
     <Layout title={metaTitle}>
       <div className='m-4'>
-        <Image
-          className='w-full h-auto'
-          src={artwork.url}
-          alt={artwork.title}
-          width={artwork.width}
-          height={artwork.height}
-        />
+        <Carousel media={artworkCollection.items} />
         <h2>
           <span>{artist}</span>
           <br />

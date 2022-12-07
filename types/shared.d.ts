@@ -44,8 +44,10 @@ export interface Release {
   artist: string;
   slug: string;
   description: RichText;
-  artwork: Asset;
-  bandcampLink: string;
+  artworkCollection: {
+    items: Asset[];
+  };
+  bandcampEmbed: string;
 }
 
 export interface Page {
@@ -56,9 +58,6 @@ export interface Page {
 export interface Event {
   title: string;
   slug: string;
-  date: Date;
-  location: string;
-  description: RichText;
   mediaCollection: {
     items: Asset[];
   };

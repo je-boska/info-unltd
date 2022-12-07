@@ -12,14 +12,16 @@ export async function getReleases() {
           description {
             json
           }
-          artwork {
-            url
-            title
-            width
-            height
-            contentType
+          artworkCollection {
+            items {
+              url
+              title
+              width
+              height
+              contentType
+            }
           }
-          bandcampLink
+          bandcampEmbed
         }
       }
     }`;
@@ -38,14 +40,16 @@ export async function getReleasePage(slug: string) {
           description {
             json
           }
-          artwork {
-            url
-            title
-            width
-            height
-            contentType
+          artworkCollection {
+            items {
+              url
+              title
+              width
+              height
+              contentType
+            }
           }
-          bandcampLink
+          bandcampEmbed
         }
       }
     }`;
