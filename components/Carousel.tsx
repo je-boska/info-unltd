@@ -1,8 +1,15 @@
 import Image from 'next/image';
 import { useState } from 'react';
 import { Asset } from '../types/shared';
+import cx from 'classnames';
 
-export default function Carousel({ media }: { media: Asset[] }) {
+export default function Carousel({
+  media,
+  artwork,
+}: {
+  media: Asset[];
+  artwork?: boolean;
+}) {
   const [currentImage, setCurrentImage] = useState<number>(0);
 
   function nextImage() {
@@ -14,7 +21,12 @@ export default function Carousel({ media }: { media: Asset[] }) {
   }
 
   return (
-    <div className='carousel relative text-2xl md:text-4xl'>
+    <div
+      className={cx('carousel relative text-2xl md:text-4xl', {
+        landscape: !artwork,
+        square: artwork,
+      })}
+    >
       <div className='h-full w-full flex justify-center'>
         <Image
           className='object-contain'

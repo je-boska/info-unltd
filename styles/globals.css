@@ -35,7 +35,11 @@
 
   /* Carousel */
 
-  .carousel {
+  .landscape {
     aspect-ratio: 16/11;
+  }
+
+  .square {
+    aspect-ratio: 1/1;
   }
 }

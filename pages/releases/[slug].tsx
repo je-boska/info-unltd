@@ -17,7 +17,7 @@ export default function Release({
     <Layout title={metaTitle}>
       <div className='m-4 grid md:grid-cols-2 gap-4'>
         <div className='md:order-2'>
-          <Carousel media={artworkCollection.items} />
+          <Carousel media={artworkCollection.items} artwork />
           {bandcampEmbed ? (
             <div
               className='mt-4 w-full'
