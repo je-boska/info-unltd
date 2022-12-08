@@ -20,6 +20,7 @@ export default function Carousel({ media }: { media: Asset[] }) {
         width={media[currentImage].width}
         height={media[currentImage].height}
         alt=''
+        loading='eager'
       />
       <div
         className='absolute group top-0 right-0 h-full w-1/2 cursor-pointer'
