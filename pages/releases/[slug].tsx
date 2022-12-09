@@ -1,13 +1,19 @@
 import Carousel from '../../components/Carousel';
 import Layout from '../../components/Layout';
+import ReleaseNav from '../../components/ReleaseNav';
 
 import { InferGetStaticPropsType } from 'next';
-import { getReleasePage, getReleasePaths } from '../../queries/Releases';
+import { getReleasePaths, getReleases } from '../../queries/Releases';
 import { renderRichTextWithImages } from '../../utils/rich-text';
 
 export default function Release({
-  release,
+  releases,
+  params,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
+  const release = releases.filter((item) => item.slug === params.slug)[0];
+  const nextRelease = releases[releases.indexOf(release) + 1];
+  const prevRelease = releases[releases.indexOf(release) - 1];
+
   const { title, artist, description, artworkCollection, bandcampEmbed } =
     release;
 
@@ -15,6 +21,9 @@ export default function Release({
 
   return (
     <Layout title={metaTitle}>
+      <div className='flex justify-end m-4'>
+        <ReleaseNav current={release} next={nextRelease} prev={prevRelease} />
+      </div>
       <div className='m-4 grid md:grid-cols-2 gap-4'>
         <div className='md:order-2'>
           <Carousel media={artworkCollection.items} artwork />
@@ -45,10 +54,10 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }: any) {
-  const release = await getReleasePage(params.slug);
+  const releases = await getReleases();
 
   return {
-    props: { release },
+    props: { releases, params },
     revalidate: 60 * 60,
   };
 }

@@ -43,6 +43,7 @@ export interface Release {
   title: string;
   artist: string;
   slug: string;
+  catalogNumber: string;
   description: RichText;
   artworkCollection: {
     items: Asset[];

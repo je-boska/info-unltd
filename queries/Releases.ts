@@ -4,11 +4,12 @@ import { contentfulQuery } from './Query';
 export async function getReleases() {
   const query = /* GRAPHQL */ `
     query ReleaseQuery {
-      releaseCollection (limit: 100) {
+      releaseCollection (limit: 100, order: catalogNumber_DESC) {
         items {
           title
           artist
           slug
+          catalogNumber
           description {
             json
           }
@@ -27,35 +28,6 @@ export async function getReleases() {
     }`;
   const { data } = await contentfulQuery(query);
   return data.releaseCollection.items as Release[];
-}
-
-export async function getReleasePage(slug: string) {
-  const query = /* GRAPHQL */ `
-    query SingleReleaseQuery($slug: String) {
-      releaseCollection (where: { slug: $slug }, limit: 1) {
-        items {
-          title
-          artist
-          slug
-          description {
-            json
-          }
-          artworkCollection {
-            items {
-              url
-              title
-              width
-              height
-              contentType
-            }
-          }
-          bandcampEmbed
-        }
-      }
-    }`;
-  const { data } = await contentfulQuery(query, { slug });
-
-  return data.releaseCollection.items[0] as Release;
 }
 
 export async function getReleasePaths() {
