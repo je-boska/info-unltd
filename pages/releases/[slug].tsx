@@ -11,8 +11,6 @@ export default function Release({
   params,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   const release = releases.filter((item) => item.slug === params.slug)[0];
-  const nextRelease = releases[releases.indexOf(release) + 1];
-  const prevRelease = releases[releases.indexOf(release) - 1];
 
   const { title, artist, description, artworkCollection, bandcampEmbed } =
     release;
@@ -22,7 +20,13 @@ export default function Release({
   return (
     <Layout title={metaTitle}>
       <div className='flex justify-end m-4'>
-        <ReleaseNav current={release} next={nextRelease} prev={prevRelease} />
+        <ReleaseNav
+          current={release}
+          next={releases[releases.indexOf(release) + 1]}
+          prev={releases[releases.indexOf(release) - 1]}
+          first={releases[0]}
+          last={releases[releases.length - 1]}
+        />
       </div>
       <div className='m-4 grid md:grid-cols-2 gap-4'>
         <div className='md:order-2'>
