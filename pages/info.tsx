@@ -10,7 +10,7 @@ export default function Info({
   const { body } = page;
   return (
     <Layout title='INFO'>
-      <div className='markup max-w-4xl m-4'>
+      <div className='rich-text max-w-4xl m-4'>
         {renderRichTextWithImages(body)}
       </div>
     </Layout>

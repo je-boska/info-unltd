@@ -44,7 +44,9 @@ export default function Release({
             <br />
             <span>{title}</span>
           </h2>
-          <div className='markup'>{renderRichTextWithImages(description)}</div>
+          <div className='rich-text'>
+            {renderRichTextWithImages(description)}
+          </div>
         </div>
       </div>
     </Layout>
