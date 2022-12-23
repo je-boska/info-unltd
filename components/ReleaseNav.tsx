@@ -23,20 +23,20 @@ export default function ReleaseNav({
 
   useEffect(() => {
     document.addEventListener('keydown', (e) => {
-      if (e.isComposing || e.keyCode === 39) {
+      if (e.isComposing || e.code === 'ArrowRight') {
         router.push(nextPath);
       }
-      if (e.isComposing || e.keyCode === 37) {
+      if (e.isComposing || e.code === 'ArrowLeft') {
         router.push(prevPath);
       }
     });
 
     return () => {
       document.removeEventListener('keydown', (e) => {
-        if (e.isComposing || e.keyCode === 39) {
+        if (e.isComposing || e.code === 'ArrowRight') {
           router.push(nextPath);
         }
-        if (e.isComposing || e.keyCode === 37) {
+        if (e.isComposing || e.code === 'ArrowLeft') {
           router.push(prevPath);
         }
       });
