@@ -3,8 +3,18 @@
 @tailwind utilities;
 
 @layer base {
-  html {
-    background-color: #e0e0e0;
+  /* Fonts */
+
+  @font-face {
+    font-family: 'Neue-Haas-Grotesk';
+    src: url('/fonts/NHaasGroteskTXPro-55Rg.ttf') format('truetype');
+  }
+
+  /* Global */
+
+  html,
+  body {
+    @apply font-sans bg-infoGray;
   }
 
   /* Rich Text */

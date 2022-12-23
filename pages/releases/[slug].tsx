@@ -19,7 +19,7 @@ export default function Release({
 
   return (
     <Layout title={metaTitle}>
-      <div className='flex justify-end m-4'>
+      <div className='flex justify-end mx-4'>
         <ReleaseNav
           current={release}
           next={releases[releases.indexOf(release) + 1]}
