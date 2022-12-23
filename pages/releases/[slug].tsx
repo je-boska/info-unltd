@@ -42,7 +42,7 @@ export default function Release({
           <h2 className='mb-6'>
             <span>{artist}</span>
             <br />
-            <span>{title}</span>
+            <span className='italic'>{title}</span>
           </h2>
           <div className='rich-text'>
             {renderRichTextWithImages(description)}

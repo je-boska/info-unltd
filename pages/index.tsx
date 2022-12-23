@@ -25,7 +25,7 @@ export default function Home({
                 <h2 className='text-lg md:text-xl lg:text-2xl'>
                   <span>{artist}</span>
                   <br />
-                  <span>{title}</span>
+                  <span className='italic'>{title}</span>
                 </h2>
               </div>
             </Link>

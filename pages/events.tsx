@@ -14,7 +14,7 @@ export default function Events({
         {events.map(({ title, slug, mediaCollection }) => (
           <div key={slug} className='max-w-4xl mx-auto mb-8 md:mb-20'>
             <Carousel media={mediaCollection.items} />
-            <h3 className='text-xl md:text-2xl text-center'>{title}</h3>
+            <h3 className='text-xl md:text-2xl text-center italic'>{title}</h3>
           </div>
         ))}
       </div>
