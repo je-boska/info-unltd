@@ -27,7 +27,7 @@ export default function Header() {
 function NavLink({ title, link }: { title: string; link: string }) {
   return (
     <Link href={link}>
-      <li className='hover:text-white hover:bg-black p-2'>{title}</li>
+      <li className='hover:text-white hover:bg-black p-1 sm:p-2'>{title}</li>
     </Link>
   );
 }
