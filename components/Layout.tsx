@@ -21,7 +21,7 @@ export default function Layout({
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <Header />
-      <main>{children}</main>
+      <main className='max-w-[1920px] mx-auto'>{children}</main>
     </>
   );
 }

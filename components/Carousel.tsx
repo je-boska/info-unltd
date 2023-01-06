@@ -41,7 +41,7 @@ export default function Carousel({
         onClick={nextImage}
       >
         <div className='relative h-full w-full text-white opacity-0 group-hover:opacity-100 transition-opacity'>
-          <div className='absolute top-1/2 right-8 xl:right-16 -translate-y-1/2'>
+          <div className='absolute top-1/2 right-8 xl:right-16 2xl:right-24 -translate-y-1/2'>
             ❯
           </div>
         </div>
@@ -51,7 +51,7 @@ export default function Carousel({
         onClick={prevImage}
       >
         <div className='relative h-full w-full text-white opacity-0 group-hover:opacity-100 transition-opacity'>
-          <div className='absolute top-1/2 left-8 xl:left-16 -translate-y-1/2'>
+          <div className='absolute top-1/2 left-8 xl:left-16 2xl:left-24 -translate-y-1/2'>
             ❮
           </div>
         </div>
