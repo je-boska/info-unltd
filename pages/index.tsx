@@ -23,7 +23,7 @@ export default function Home({
                   height={artworkCollection.items[0].height}
                 />
                 <h2 className='text-lg md:text-xl'>
-                  <span>{artist}</span>
+                  <span className='uppercase'>{artist}</span>
                   <br />
                   <span className='italic'>{title}</span>
                 </h2>

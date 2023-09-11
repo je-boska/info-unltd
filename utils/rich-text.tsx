@@ -8,6 +8,8 @@ const getAssetById = (id: string, assets: Asset[]) =>
   assets.filter((asset) => asset.sys.id === id).pop();
 
 export function renderRichTextWithImages(content: RichText) {
+  if (!content) return;
+
   if (content.links) {
     const blockAssets = content.links.assets.block;
 

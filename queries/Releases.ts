@@ -25,7 +25,7 @@ export async function getReleases() {
               }
             }
           }
-          artworkCollection (limit: 5) {
+          artworkCollection (limit: 8) {
             items {
               url
               title

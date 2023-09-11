@@ -40,7 +40,7 @@ export default function Release({
         </div>
         <div className='md:order-1 max-w-3xl text-lg md:text-xl'>
           <h2 className='mb-6'>
-            <span>{artist}</span>
+            <span className='uppercase'>{artist}</span>
             <br />
             <span className='italic'>{title}</span>
           </h2>

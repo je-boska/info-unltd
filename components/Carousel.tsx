@@ -29,7 +29,7 @@ export default function Carousel({
     >
       <div className='h-full w-full flex justify-center items-end'>
         <Image
-          className='object-contain'
+          className='object-contain w-full'
           src={media[currentImage].url}
           width={media[currentImage].width}
           height={media[currentImage].height}
