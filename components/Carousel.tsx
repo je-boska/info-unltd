@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Asset } from '../types/shared';
 import cx from 'classnames';
 
@@ -20,6 +20,10 @@ export default function Carousel({
     setCurrentImage(currentImage > 0 ? currentImage - 1 : media.length - 1);
   }
 
+  useEffect(() => {
+    setCurrentImage(0);
+  }, [media]);
+
   return (
     <div
       className={cx('carousel relative text-2xl md:text-4xl', {
@@ -28,13 +32,15 @@ export default function Carousel({
       })}
     >
       <div className='h-full w-full flex justify-center items-end'>
-        <Image
-          className='object-contain w-full'
-          src={media[currentImage].url}
-          width={media[currentImage].width}
-          height={media[currentImage].height}
-          alt=''
-        />
+        {media[currentImage] ? (
+          <Image
+            className='object-contain w-full'
+            src={media[currentImage].url}
+            width={media[currentImage].width}
+            height={media[currentImage].height}
+            alt=''
+          />
+        ) : null}
       </div>
       <div
         className='absolute group top-0 right-0 h-full w-1/2 cursor-pointer'
