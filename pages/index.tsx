@@ -22,7 +22,7 @@ export default function Home({
                   width={artworkCollection.items[0].width}
                   height={artworkCollection.items[0].height}
                 />
-                <h2 className='text-lg md:text-xl lg:text-2xl'>
+                <h2 className='text-lg md:text-xl'>
                   <span>{artist}</span>
                   <br />
                   <span className='italic'>{title}</span>

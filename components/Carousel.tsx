@@ -27,7 +27,7 @@ export default function Carousel({
         square: artwork,
       })}
     >
-      <div className='h-full w-full flex justify-center'>
+      <div className='h-full w-full flex justify-center items-end'>
         <Image
           className='object-contain'
           src={media[currentImage].url}

@@ -44,7 +44,7 @@ export default function ReleaseNav({
   });
 
   return (
-    <div className='text-lg md:text-xl lg:text-2xl flex'>
+    <div className='text-lg md:text-xl flex'>
       <Link href={prevPath}>←</Link>
       <p className='px-2'>{current.catalogNumber}</p>
       <Link href={nextPath}>→</Link>

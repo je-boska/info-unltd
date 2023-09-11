@@ -14,7 +14,7 @@ export default function Header() {
         />
       </Link>
       <nav className='z-10'>
-        <ul className='fixed top-4 right-4 flex text-base md:text-xl border border-black bg-infoGray'>
+        <ul className='fixed top-4 right-4 flex text-base md:text-lg border border-black bg-infoGray'>
           <NavLink title='RELEASES' link='/' />
           <NavLink title='EVENTS' link='/events' />
           <NavLink title='INFO' link='/info' />

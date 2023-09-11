@@ -8,6 +8,7 @@
   @font-face {
     font-family: 'Neue-Haas-Grotesk';
     src: url('/fonts/NHaasGroteskTXPro-55Rg.ttf') format('truetype');
+    font-weight: 100 900;
   }
 
   /* Global */
@@ -20,7 +21,7 @@
   /* Rich Text */
 
   .rich-text {
-    @apply text-lg md:text-xl lg:text-2xl;
+    @apply text-lg md:text-xl;
   }
 
   .rich-text p {
@@ -28,7 +29,7 @@
   }
 
   .rich-text a {
-    @apply text-blue-600;
+    @apply underline;
   }
 
   .rich-text h3 {
