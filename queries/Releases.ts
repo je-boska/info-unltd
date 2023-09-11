@@ -12,8 +12,20 @@ export async function getReleases() {
           catalogNumber
           description {
             json
+            links {
+              assets {
+                block {
+                  sys {
+                    id
+                  }
+                  contentType
+                  title
+                  url
+                }
+              }
+            }
           }
-          artworkCollection {
+          artworkCollection (limit: 5) {
             items {
               url
               title

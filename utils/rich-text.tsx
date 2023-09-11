@@ -19,7 +19,11 @@ export function renderRichTextWithImages(content: RichText) {
         ) {
           const uri = node.data.uri as string;
 
-          return <a href={uri}>{children}</a>;
+          return (
+            <a href={uri} target='_blank' rel='noopener nofollow noreferrer'>
+              {children}
+            </a>
+          );
         },
         [BLOCKS.EMBEDDED_ASSET]: function EmbeddedAsset(node: Block | Inline) {
           const id = node.data.target.sys.id;
