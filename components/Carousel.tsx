@@ -12,6 +12,10 @@ export default function Carousel({
 }) {
   const [currentImage, setCurrentImage] = useState<number>(0);
 
+  useEffect(() => {
+    setCurrentImage(0);
+  }, [media]);
+
   function nextImage() {
     setCurrentImage(currentImage < media.length - 1 ? currentImage + 1 : 0);
   }
@@ -19,10 +23,6 @@ export default function Carousel({
   function prevImage() {
     setCurrentImage(currentImage > 0 ? currentImage - 1 : media.length - 1);
   }
-
-  useEffect(() => {
-    setCurrentImage(0);
-  }, [media]);
 
   return (
     <div
